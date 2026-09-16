@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Life RPG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div>
+    <h1>MARVEL LIFE</h1>
+    <p>Unofficial fan-made interactive RPG</p>
+  </div>
+
+  <span id="saveStatus">Not saved</span>
+</header>
+
+<main>
+
+  <!-- CHARACTER CREATOR -->
+
+  <section id="creator" class="card">
+
+    <h2>Create Your Character</h2>
+
+    <label>
+      Name
+      <input id="name" placeholder="Your character's name">
+    </label>
+
+    <label>
+      Age
+      <input id="age" type="number" value="16">
+    </label>
+
+    <label>
+      Role
+      <select id="role">
+        <option>Stark Industries Intern</option>
+        <option>Avengers Tower Resident</option>
+        <option>S.H.I.E.L.D. Recruit</option>
+        <option>Independent Hero</option>
+        <option>Student</option>
+      </select>
+    </label>
+
+    <label>
+      Character description
+      <textarea id="description"
+        placeholder="Describe your character..."></textarea>
+    </label>
+
+    <button onclick="startGame()">START STORY</button>
+
+  </section>
+
+
+  <!-- GAME -->
+
+  <section id="game" class="hidden">
+
+    <div class="layout">
+
+      <!-- SIDEBAR -->
+
+      <aside>
+
+        <div class="card">
+          <h3>PLAYER</h3>
+          <div id="playerInfo"></div>
+        </div>
+
+        <div class="card">
+          <h3>WORLD</h3>
+          <div id="worldInfo"></div>
+        </div>
+
+        <div class="card">
+          <h3>CURRENT GOAL</h3>
+          <div id="goals"></div>
+        </div>
+
+        <div class="card">
+          <h3>RELATIONSHIPS</h3>
+          <div id="relationships"></div>
+        </div>
+
+        <button class="danger" onclick="resetGame()">
+          RESET STORY
+        </button>
+
+      </aside>
+
+
+      <!-- STORY -->
+
+      <section class="card story">
+
+        <div id="storyLog"></div>
+
+        <div class="inputBox">
+
+          <textarea
+            id="playerInput"
+            placeholder="What does your character say or do?"
+          ></textarea>
+
+          <button onclick="sendMessage()">
+            SEND
+          </button>
+
+        </div>
+
+        <small>
+          You control ONLY your character.
+          The game controls NPCs and the world.
+        </small>
+
+      </section>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
